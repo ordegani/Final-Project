@@ -126,7 +126,10 @@ const addTofavourites = (saved) => {
           <Painting
             key={painting.index}
             id={painting.index}
-            image={painting.image}
+            image={painting.image
+              //TODO add css to control size
+              // !Large.jpg
+            }
             artistName={painting.artistName}
             title={painting.title}
             completitionYear={painting.completitionYear}

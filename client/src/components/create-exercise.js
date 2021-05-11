@@ -104,7 +104,7 @@ export default class CreateExercise extends Component {
                 {/* <h4 className="t">{localStorage.getItem(`user`)}</h4> */}
        
       {/* <img src={localStorage.getItem(`user1`)} alt="image"></img> */}
-      {this.props.save && <img src={this.props.save.image.replace('!Large.jpg','')} alt="image"></img>}
+      {this.props.save && <img src={this.props.save.image} alt="image"></img>}
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
           <label>Username: </label>
