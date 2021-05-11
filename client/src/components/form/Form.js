@@ -43,6 +43,7 @@ const Form = ({setsave}) => {
     // setPaintings(data.hits);
     // console.log(data.hits);
   };
+  
   const flavourArray = ["john-everett-millais", "edward-hopper", "michelangelo-merisi-da-caravaggio", "gustav-klimt"];
   const ran = Math.floor(Math.random() * flavourArray.length);
   const searcher = flavourArray[ran];
