@@ -133,13 +133,13 @@ export default class CreateExercise extends Component {
               />
         </div>
 
-        {/* <label>Descriptio: </label>
+        <label>Descriptio: </label>
           <input  type="text"
               required
               className="form-control"
               value={this.props.save && this.state.descriptio}
               onChange={this.onChangeDescriptio}
-              /> */}
+              />
        
 
         {/* <div className="form-group"> */}

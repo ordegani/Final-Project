@@ -43,7 +43,7 @@ const Form = ({setsave}) => {
     // setPaintings(data.hits);
     // console.log(data.hits);
   };
-  
+
   const flavourArray = ["john-everett-millais", "edward-hopper", "michelangelo-merisi-da-caravaggio", "gustav-klimt"];
   const ran = Math.floor(Math.random() * flavourArray.length);
   const searcher = flavourArray[ran];
@@ -68,7 +68,7 @@ const addTofavourites = (saved) => {
 
 
     setFavourites([...favourites, saved]);
-    alert(`Saved`);
+    alert(`Note Created`);
     console.log(favourites);
    setsave(saved);
     
@@ -99,7 +99,8 @@ const addTofavourites = (saved) => {
     
 
     <div className="paintings">
-        <div className="explore">Explore: {query}'s work</div>
+    <div className="explore">Please choose an artist, or let us suggest one from our list of recommended. You can scrawl down to see the artist work.</div>
+        <div className="explore">Explore our suggestion: {query}'s work</div>
 
       <form onSubmit={getSearch} className="search-form">
       
