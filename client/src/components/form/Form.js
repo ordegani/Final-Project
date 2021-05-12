@@ -44,7 +44,7 @@ const Form = ({setsave}) => {
     // console.log(data.hits);
   };
 
-  const flavourArray = ["john-everett-millais", "edward-hopper", "michelangelo-merisi-da-caravaggio", "gustav-klimt"];
+  const flavourArray = ["john-everett-millais", "edward-hopper", "michelangelo-merisi-da-caravaggio", "gustav-klimt", "leon-spilliaert"];
   const ran = Math.floor(Math.random() * flavourArray.length);
   const searcher = flavourArray[ran];
   const [query, setQuery] = useState (searcher);
