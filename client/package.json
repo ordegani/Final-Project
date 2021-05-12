@@ -15,7 +15,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.1",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && npm install --prefix server"
+
   },
   "scripts": {
     "start": "react-scripts start",
