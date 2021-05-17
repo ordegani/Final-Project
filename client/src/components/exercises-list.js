@@ -24,7 +24,7 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/exercises/')
+    axios.get('http://localhost:5000/exercise/')
       .then(response => {
         this.setState({ exercises: response.data })
       })
@@ -34,7 +34,7 @@ export default class ExercisesList extends Component {
   }
 
   deleteExercise(id) {
-    axios.delete('http://localhost:5000/exercises/'+id)
+    axios.delete('http://localhost:5000/exercise/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -51,14 +51,13 @@ export default class ExercisesList extends Component {
   render() {
     return (
       <div>
-        <h3>Logged Exercises</h3>
+        <h3>Logged Lists</h3>
         <table className="table">
           <thead className="thead-light">
             <tr>
               <th>Username</th>
-              <th>Description</th>
+              <th>Notes</th>
               <th>Descriptio</th>
-              {/* <th>Duration</th> */}
               <th>Date</th>
               <th>Actions</th>
             </tr>

@@ -8,14 +8,14 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/').post((req, res) => {
-  const username = req.body.username;
+  // const username = req.body.username;
   const description = req.body.description;
   const descriptio = req.body.descriptio;
   const duration = Number(req.body.duration);
   const date = Date.parse(req.body.date);
 
   const newExercise = new Exercise({
-    username,
+    // username,
     description,
     descriptio,
     duration,

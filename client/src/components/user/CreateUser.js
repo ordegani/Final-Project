@@ -28,7 +28,7 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('http://localhost:5000/users/user', user)
+    axios.post('http://localhost:5000/users/', user)
       .then(res => console.log(res.data));
 
     this.setState({
@@ -44,7 +44,7 @@ export default class CreateUser extends Component {
           <div className="form-group"> 
             <label>Username: </label>
             <input  type="text"
-                required
+                // required
                 className="form-control"
                 value={this.state.username}
                 onChange={this.onChangeUsername}

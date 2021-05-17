@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+:root{
+  font-family: 'Playfair Display', serif;
+}
 
 .Form{
     display:flex;
@@ -7,22 +10,30 @@
  
     
   }
+.image{
+  max-width: 100vh;
+  max-height: 100vh;
+}
 .explore{
+
   display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 10vh;
+  text-align: center;
+  font-size: 5vh;
+  font-family: 'Playfair Display', serif;
 }
   .paintings{
 
-  min-width: 100%;
-  max-width: 100%;
+
   border-radius: 10px;
   box-shadow: 0px 5px 20px  var(--main);
-  margin:20px;
   background-color: var(--sub);
   padding:15px 25px 25px 25px;
   border:solid 2px var(--main);
+ 
+
   }
 
 .paintingsContainer{
@@ -30,13 +41,14 @@
   flex-direction:column;
   justify-content: center;
   align-items: center;
+
  
 }
 .image{
   border-radius: 10px;
   box-shadow: 0px 5px 20px  var(--main);
   margin-bottom: 10vh;
-  ;}
+  }
   .search-form{
     min-height:10vh;
     display: flex;
@@ -49,19 +61,17 @@
   }
   .search-bar{
     width: 30%;  
-    padding: 10px;
-    padding:10px 20px;
+    padding:10px;
     background-color: white;
     border: 1px solid black;
+    border-radius: 60px 60px 60px 60px;
+    display: flex;
+    text-align: center;
   }
-  .search-button{
-    background-color: var(--main);
-    border:none;
-    padding:10px 20px;
-    color: var(--sub);
-    font-family: 'Playfair Display', serif;
-    /*font-family: 'Spicy Rice', cursive;*/
-    border: 1px solid black;
+
+  .search-button:hover{
+    background-color: white;
+    color: black;
   }
   .h4{
     border:2px solid black;
@@ -69,3 +79,61 @@
   h3{
     margin-top: 10vh;
   }
+  .navbar-item{
+color: pink;
+  }
+  #alertBox{
+    color:red;
+  }
+  .form-controlDescriptio{
+    color:grey;
+      display: block;
+      width: 100%;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  .refresh{
+
+    margin:5vh;
+    border-radius: 45px 45px;
+    background-color: black;
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 50%;
+
+  }
+  .refresh:hover{
+    background-color: white;
+    color: black;
+  }
+  .savedList{
+
+    border-radius: 60px 60px;
+    background-color: black;
+    color: white;
+    margin-bottom: 5vh;
+    margin-top: -3vh;
+  }
+  .search-button{
+    margin:5vh;
+    border-radius: 60px 60px;
+    background-color: black;
+    color: white;
+    padding:10px 20px;
+    font-family: 'Playfair Display', serif;
+    /*font-family: 'Spicy Rice', cursive;*/
+    border: 1px solid black;
+  }
+

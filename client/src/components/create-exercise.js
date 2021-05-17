@@ -4,8 +4,10 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 // import Form from "./form/Form"
 import "../components/form/maincontainer.css";
+import "./form/maincontainer.css"
+import { withRouter } from "react-router";
 
-export default class CreateExercise extends Component {
+class CreateExercise extends Component {
 
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ export default class CreateExercise extends Component {
 
     this.state = {
       username: '',
-      description: this.props.save.title,
+      description: this.props.save.title +', ' +this.props.save.artistName+', '+this.props.save.completitionYear,
       descriptio: 
       // `: ` + localStorage.getItem(`user1`) + 
       "for more info: "+`https://www.wikiart.org/en/${this.props.save.title}/`,
@@ -90,26 +92,27 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:5000/exercises/', exercise)
-      .then(res => console.log(res.data));
+    axios.post('http://localhost:5000/exercise/', exercise)
+      .then(res => this.props.history.push('/'));
 
-    window.location = '/';
+    // window.location = '/';
   }
 
   render() {
     return (
     <div>
-      <h4>{this.props.save.title}</h4>
+      {/* <h4>{this.props.save.title}</h4> */}
       {/* <h4>{localStorage.getItem(`user2`)}</h4> */}
                 {/* <h4 className="t">{localStorage.getItem(`user`)}</h4> */}
        
       {/* <img src={localStorage.getItem(`user1`)} alt="image"></img> */}
-      {this.props.save && <img src={this.props.save.image} alt="image"></img>}
+      {this.props.save && <img className="image" src={this.props.save.image} alt="image"></img>}
       <form onSubmit={this.onSubmit}>
-        <div className="form-group"> 
+        {/* {/* <div className="form-group">  */}
+        <div className="form-group">
           <label>Username: </label>
           <select ref="userInput"
-              required
+              // required
               className="form-control"
               value={this.state.username}
               onChange={this.onChangeUsername}>
@@ -122,7 +125,7 @@ export default class CreateExercise extends Component {
                 })
               }
           </select>
-        </div>
+        </div> 
         <div className="form-group"> 
           <label>Description: </label>
           <input  type="text"
@@ -136,21 +139,21 @@ export default class CreateExercise extends Component {
         <label>Descriptio: </label>
           <input  type="text"
               required
-              className="form-control"
+              className="form-controlDescriptio"
               value={this.props.save && this.state.descriptio}
               onChange={this.onChangeDescriptio}
               />
        
 
-        {/* <div className="form-group"> */}
-          {/* <label>Duration (in minutes): </label>
+        <div className="form-group"> 
+    <label>Duration (in minutes): </label>
           <input 
               type="text" 
               className="form-control"
               value={this.state.duration}
               onChange={this.onChangeDuration}
-              /> */}
-        {/* </div> */}
+              />
+        </div> 
         <div className="form-group">
           <label>Date: </label>
           <div>
@@ -166,10 +169,13 @@ export default class CreateExercise extends Component {
 
         
         <div className="form-group">
-          <input type="submit" value="Create Exercise Log" className="btn btn-primary" />
+          <input type="submit" value="Create Note" className="btn btn-primary" />
         </div>
       </form>
     </div>
     )
   }
 }
+
+
+export default withRouter(CreateExercise);

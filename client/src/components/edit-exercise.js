@@ -7,7 +7,7 @@ export default class EditExercise extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeUsername = this.onChangeUsername.bind(this);
+    // this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeDescriptio = this.onChangeDescriptio.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
@@ -110,7 +110,7 @@ export default class EditExercise extends Component {
         <div className="form-group"> 
           <label>Username: </label>
           <select ref="userInput"
-              required
+              // required
               className="form-control"
               value={this.state.username}
               onChange={this.onChangeUsername}>
@@ -139,8 +139,8 @@ export default class EditExercise extends Component {
           <input  type="text"
               required
               className="form-control"
-              value={this.state.descriptio}
-              onChange={this.onChangeDescriptio}
+              value={this.state.description}
+              onChange={this.onChangeDescription}
               />
         </div>
 

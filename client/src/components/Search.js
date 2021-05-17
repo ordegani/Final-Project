@@ -1,10 +1,10 @@
-import Painting from "./Painting";
+import Painting from "./form/Painting";
 import React, { useEffect, useState } from "react";
-import "./maincontainer.css";
 //Access-Control-Allow-Origin : *
-import NavBar from "../navBar/NavBar";
+import "./form/maincontainer.css";
+import { withRouter } from "react-router";
 
-const Form = ({setsave}) => {
+const Search = ({setsave}) => {
   const [paintings, setPaintings] = useState([]);
   const [search, setSearch] = useState("");
  
@@ -14,7 +14,7 @@ const Form = ({setsave}) => {
   
   const getSessionKey = async () => {
     const response = await fetch(
-      `https://api.codetabs.com/v1/proxy?quest=https://www.wikiart.org/en/Api/2/login?accessCode=8152dc79d3a84b65&secretCode=8e713d5e00346e24`
+      `https://api.codetabs.com/v1/proxy?quest=https://www.wikiart.org/en/Api/2/login?accessCode=7e4c1039eb054015&secretCode=a5c9d53cd206af8d`
     );
     const Data1 = await response.json();
     setSessionKey(Data1.hits);
@@ -44,18 +44,16 @@ const Form = ({setsave}) => {
     // console.log(data.hits);
   };
 
-  const flavourArray = ["john-everett-millais", "edward-hopper", "michelangelo-merisi-da-caravaggio", "gustav-klimt", "leon-spilliaert"];
-  const ran = Math.floor(Math.random() * flavourArray.length);
-  const searcher = flavourArray[ran];
-  const [query, setQuery] = useState (searcher);
+
+  const [query, setQuery] = useState ('');
 
   useEffect(() => {
     getPaintings();
   }, [query]);
 
-  // const updateSearch = (e) => {
-  //   setSearch(e.target.value);
-  // };
+  const updateSearch = (e) => {
+    setSearch(e.target.value);
+  };
   const getSearch = (e) => {
     e.preventDefault();
     setQuery(search.toLowerCase().replace(/ /g,"-"));
@@ -88,41 +86,38 @@ const addTofavourites = (saved) => {
 // window.localStorage.setItem('user3', ...favourites);
 // JSON.parse(window.localStorage.getItem('user3'));
 // window.localStorage.setItem('user1', favourites);
-function refreshPage(){
-  window.location.reload();
-} 
+
 
 
 
 ///////////
   return (
-   
-
   
     <div className="maincontainer">
+    
 
     <div className="paintings">
-        <div className="explore">Explore our suggestion: <br/>{query}'s work
-        
-        <button className="refresh" type="submit" onClick={refreshPage}>Give me a new <br/> suggestion</button></div>
-      {/* <form onSubmit={getSearch} className="search-form"> */}
+    {/* <div className="explore">choose an artist</div> */}
       
-        {/* <input
+
+      <form onSubmit={getSearch} className="search-form">
+      
+        <input
           className="search-bar"
-          placeholder="Or type here your search"
+          placeholder="choose an artist to explore"
           type="text"
           value={search}
           onChange={updateSearch}
-        /> */}
+        />
       
-        {/* <button
+        <button
           className="search-button"
           type="Submit"
         >
           Search
-        </button> */}
+        </button>
       
-      {/* </form> */}
+      </form>
       
 
         
@@ -131,15 +126,16 @@ function refreshPage(){
           <Painting
             key={painting.index}
             id={painting.index}
-            image={painting.image.replace('!Large.jpg','')
+            image={painting.image.replace('!Large.jpg','')}
               //TODO add css to control size
               // !Large.jpg + copy api
-            }
+            
             artistName={painting.artistName}
             title={painting.title}
             completitionYear={painting.completitionYear}
             onClick={addTofavourites}
             buttonText="Save"
+            
             // onClick={AddTofavourites}
             // buttonText="Save"
             
@@ -154,5 +150,5 @@ function refreshPage(){
   );
 };
 
-export default Form;
+export default Search;
 

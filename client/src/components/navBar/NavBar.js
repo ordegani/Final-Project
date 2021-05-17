@@ -1,30 +1,36 @@
-
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import "./navBar.css";
 
 export default class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <Link to="/" className="navbar-brand">  ArtNotes</Link>
-        <div className="collpase navbar-collapse">
-        <ul className="navbar-nav mr-auto">
-        <li className="navbar-item">
-          <Link to="/gallery" className="nav-link">gallery</Link>
-          </li>
 
-          <li className="navbar-item">
-          <Link to="/create" className="nav-link">Save</Link>
+      <nav className="navbar">
+        
+        <div className="collpase navbar-collapse">         
+        <ul className="navbar-items">
+          {/* TODO about page */}
+          <Link to="/about" className="navbar-brand">ArtNotes</Link>
+        <li className="navbar-item">
+          <Link to="/search" className="nav-link">Search</Link>
+          </li>
+        <li className="navbar-item">
+          <Link to="/gallery" className="nav-link">Discover</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/" className="nav-link">List</Link>
+          <Link to="/create" className="nav-link">Create Note</Link>
+          </li>
+          <li className="navbar-item">
+          <Link to="/" className="nav-link">View Notes List</Link>
           </li>
           <li className="navbar-item">
           <Link to="/user" className="nav-link">Create User</Link>
           </li>
+
         </ul>
+        
         </div>
       </nav>
     );
