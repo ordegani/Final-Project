@@ -170,7 +170,7 @@ class CreateExercise extends Component {
 
         
         <div className="form-group">
-          <input type="submit" value="Create Note" className="createNoteBtn" />
+          <input type="submit" value="Save" className="createNoteBtn" />
         </div>
       </form>
     </div>
