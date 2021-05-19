@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const Exercise = props => (
   <tr>
-    <td>{props.exercise.username}</td>
+    {/* <td>{props.exercise.username}</td> */}
     <td>{props.exercise.description}</td>
     <td>{props.exercise.descriptio}</td>
     <td>{props.exercise.date.substring(0,10)}</td>
@@ -34,7 +34,8 @@ export default class ExercisesList extends Component {
   }
 
   deleteExercise(id) {
-    axios.delete('http://localhost:5000/exercise/'+id)
+    console.log(id)
+    axios.delete(`http://localhost:5000/exercise/`+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -55,11 +56,11 @@ export default class ExercisesList extends Component {
         <table className="table">
           <thead className="thead-light">
             <tr>
-              <th>Username</th>
-              <th>Notes</th>
-              <th>Descriptio</th>
+              {/* <th>Username</th> */}
+              <th>Title and Description</th>
+              <th>Personal notes</th>
               <th>Date</th>
-              <th>Actions</th>
+              {/* <th>Actions</th> */}
             </tr>
           </thead>
           <tbody>

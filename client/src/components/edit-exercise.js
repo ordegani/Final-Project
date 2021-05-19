@@ -25,7 +25,7 @@ export default class EditExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/exercises/'+this.props.match.params.id)
+    axios.get('http://localhost:5000/exercise/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           username: response.data.username,
@@ -96,7 +96,7 @@ export default class EditExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:5000/exercises/update/' + this.props.match.params.id, exercise)
+    axios.post('http://localhost:5000/exercise/update/' + this.props.match.params.id, exercise)
       .then(res => console.log(res.data));
 
     window.location = '/';
@@ -107,10 +107,10 @@ export default class EditExercise extends Component {
     <div>
       <h3>Edit Exercise Log</h3>
       <form onSubmit={this.onSubmit}>
-        <div className="form-group"> 
+        {/* <div className="form-group"> 
           <label>Username: </label>
           <select ref="userInput"
-              // required
+              required
               className="form-control"
               value={this.state.username}
               onChange={this.onChangeUsername}>
@@ -123,9 +123,9 @@ export default class EditExercise extends Component {
                 })
               }
           </select>
-        </div>
+        </div> */}
         <div className="form-group"> 
-          <label>Description: </label>
+          <label>Title and Description: </label>
           <input  type="text"
               required
               className="form-control"
@@ -135,16 +135,16 @@ export default class EditExercise extends Component {
         </div>
 
         <div className="form-group"> 
-          <label>Descriptio: </label>
+          <label>Personal notes: </label>
           <input  type="text"
               required
               className="form-control"
-              value={this.state.description}
-              onChange={this.onChangeDescription}
+              value={this.state.descriptio}
+              onChange={this.onChangeDescriptio}
               />
         </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Duration (in minutes): </label>
           <input 
               type="text" 
@@ -152,7 +152,7 @@ export default class EditExercise extends Component {
               value={this.state.duration}
               onChange={this.onChangeDuration}
               />
-        </div>
+        </div> */}
         <div className="form-group">
           <label>Date: </label>
           <div>
@@ -164,7 +164,7 @@ export default class EditExercise extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Edit Exercise Log" className="btn btn-primary" />
+          <input type="submit" value="Edit Note" className="btn btn-primary" />
         </div>
       </form>
     </div>

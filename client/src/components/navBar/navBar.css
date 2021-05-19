@@ -10,11 +10,11 @@
 }
 
 .navbar-brand{
-color:wheat;
+color:rgb(187, 185, 185);
   background-color: black;
 }
 .navbar-brand:hover{
-  color:wheat;
+  color:rgb(187, 185, 185);
   background-color: black;
  }    
 .nav-link{

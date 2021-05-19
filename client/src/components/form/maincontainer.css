@@ -13,6 +13,21 @@
 .image{
   max-width: 100vh;
   max-height: 100vh;
+  
+}
+.noteImg{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.form{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center; 
+  width:100vh;
 }
 .explore{
 
@@ -73,18 +88,19 @@
     background-color: white;
     color: black;
   }
+  .createNoteBtn{
+    background-color: black;
+    color: white;
+    margin-top: 2vh;
+    border-radius: 60px 60px 60px 60px;
+  }
   .h4{
     border:2px solid black;
   }
   h3{
     margin-top: 10vh;
   }
-  .navbar-item{
-color: pink;
-  }
-  #alertBox{
-    color:red;
-  }
+
   .form-controlDescriptio{
     color:grey;
       display: block;
@@ -104,7 +120,7 @@ color: pink;
   .refresh{
 
     margin:5vh;
-    border-radius: 45px 45px;
+    border-radius: 60px 60px;
     background-color: black;
     color: white;
     display:flex;
@@ -112,7 +128,7 @@ color: pink;
     align-items: center;
     text-align: center;
     font-size: 50%;
-
+    /* transform: rotate(50deg 50deg); */
   }
   .refresh:hover{
     background-color: white;
@@ -136,4 +152,33 @@ color: pink;
     /*font-family: 'Spicy Rice', cursive;*/
     border: 1px solid black;
   }
+
+
+
+  #confirm {
+    display: none;
+    background-color: #514E61;
+    color: #FFFFFF;
+    border: 1px solid #aaa;
+    position: fixed;
+    width: 250px;
+    left: 50%;
+    margin-left: -100px;
+    padding: 6px 8px 8px;
+    box-sizing: border-box;
+    text-align: center;
+ }
+ #confirm button {
+    background-color: #48E5DA;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+ }
+ #confirm .message {
+    text-align: left;
+ }
 

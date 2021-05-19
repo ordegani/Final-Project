@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route} from "react-router-dom";
-
+import About from "./components/about"
 import Navbar from "./components/navBar/NavBar"
 import ExercisesList from "./components/exercises-list";
 import EditExercise from "./components/edit-exercise";
@@ -19,6 +19,7 @@ function App() {
       <div className="container">
       <Navbar />
       <br/>
+      <Route path="/about" component={About} />
       <Route path="/Search" exact> 
       <Search setsave={setsave}/>
       </Route>
@@ -35,7 +36,7 @@ function App() {
       </Route>
       <Route path="/" exact component={ExercisesList} />
       {/* <Route path="/create" component={CreateExercise} /> */}
-      <Route path="/user" component={CreateUser} />
+      {/* <Route path="/user" component={CreateUser} /> */}
       </div>
     </Router>
   );

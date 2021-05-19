@@ -7,6 +7,7 @@ import "../components/form/maincontainer.css";
 import "./form/maincontainer.css"
 import { withRouter } from "react-router";
 
+
 class CreateExercise extends Component {
 
   constructor(props) {
@@ -100,16 +101,16 @@ class CreateExercise extends Component {
 
   render() {
     return (
-    <div>
+    <div className="noteImg">
       {/* <h4>{this.props.save.title}</h4> */}
       {/* <h4>{localStorage.getItem(`user2`)}</h4> */}
                 {/* <h4 className="t">{localStorage.getItem(`user`)}</h4> */}
        
       {/* <img src={localStorage.getItem(`user1`)} alt="image"></img> */}
       {this.props.save && <img className="image" src={this.props.save.image} alt="image"></img>}
-      <form onSubmit={this.onSubmit}>
+      <form className="form" onSubmit={this.onSubmit}>
         {/* {/* <div className="form-group">  */}
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Username: </label>
           <select ref="userInput"
               // required
@@ -125,9 +126,9 @@ class CreateExercise extends Component {
                 })
               }
           </select>
-        </div> 
+        </div>  */}
         <div className="form-group"> 
-          <label>Description: </label>
+          <label>Title and Description: </label>
           <input  type="text"
               required
               className="form-control"
@@ -136,15 +137,15 @@ class CreateExercise extends Component {
               />
         </div>
 
-        <label>Descriptio: </label>
+        <label>Personal Notes: </label>
           <input  type="text"
               required
-              className="form-controlDescriptio"
+              className="form-control"
               value={this.props.save && this.state.descriptio}
               onChange={this.onChangeDescriptio}
               />
        
-
+{/* 
         <div className="form-group"> 
     <label>Duration (in minutes): </label>
           <input 
@@ -153,7 +154,7 @@ class CreateExercise extends Component {
               value={this.state.duration}
               onChange={this.onChangeDuration}
               />
-        </div> 
+        </div>  */}
         <div className="form-group">
           <label>Date: </label>
           <div>
@@ -169,7 +170,7 @@ class CreateExercise extends Component {
 
         
         <div className="form-group">
-          <input type="submit" value="Create Note" className="btn btn-primary" />
+          <input type="submit" value="Create Note" className="createNoteBtn" />
         </div>
       </form>
     </div>

@@ -1,8 +1,8 @@
 import Painting from "./Painting";
 import React, { useEffect, useState } from "react";
 import "./maincontainer.css";
-//Access-Control-Allow-Origin : *
-import NavBar from "../navBar/NavBar";
+
+
 
 const Form = ({setsave}) => {
   const [paintings, setPaintings] = useState([]);
@@ -68,10 +68,11 @@ const addTofavourites = (saved) => {
 
 
     setFavourites([...favourites, saved]);
+    
     alert(`Good Choice!`);
-    console.log(favourites);
    setsave(saved);
-   
+   console.log(favourites);
+
     // localStorage.setItem(`user`, saved.title)
     // localStorage.setItem(`user1`, saved.image)
     // localStorage.setItem(`user2`, query)
@@ -104,7 +105,7 @@ function refreshPage(){
     <div className="paintings">
         <div className="explore">Explore our suggestion: <br/>{query}'s work
         
-        <button className="refresh" type="submit" onClick={refreshPage}>Give me a new <br/> suggestion</button></div>
+        <button className="refresh" type="submit" onClick={refreshPage}>Give me a new suggestion</button></div>
       {/* <form onSubmit={getSearch} className="search-form"> */}
       
         {/* <input
