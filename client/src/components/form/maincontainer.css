@@ -168,6 +168,10 @@
     box-sizing: border-box;
     text-align: center;
  }
+ .list{
+  font-family: 'Playfair Display', serif;
+}
+
  #confirm button {
     background-color: #48E5DA;
     display: inline-block;
@@ -180,5 +184,9 @@
  }
  #confirm .message {
     text-align: left;
+    
  }
 
+.form{
+  font-family: 'Playfair Display', serif;
+}

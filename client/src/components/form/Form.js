@@ -69,7 +69,7 @@ const addTofavourites = (saved) => {
 
     setFavourites([...favourites, saved]);
     
-    alert(`Good Choice!`);
+    // alert(`Good Choice!`);
    setsave(saved);
    console.log(favourites);
 

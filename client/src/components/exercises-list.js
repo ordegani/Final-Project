@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import "../components/form/maincontainer.css";
 
 const Exercise = props => (
   <tr>
@@ -9,11 +10,11 @@ const Exercise = props => (
     <td>{props.exercise.descriptio}</td>
     <td>{props.exercise.date.substring(0,10)}</td>
     <td>
-      <Link to={"/edit/"+props.exercise._id}>edit</Link> | <a href="#" onClick={() => { props.deleteExercise(props.exercise._id) }}>delete</a>
+       <a href="#" onClick={() => { props.deleteExercise(props.exercise._id) }}>delete</a>
     </td>
   </tr>
 )
-
+//  TODO{/* <Link to={"/edit/"+props.exercise._id}>edit</Link> | */}
 export default class ExercisesList extends Component {
   constructor(props) {
     super(props);
@@ -51,8 +52,8 @@ export default class ExercisesList extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Logged Lists</h3>
+      <div className="list">
+        <h3>My notes</h3>
         <table className="table">
           <thead className="thead-light">
             <tr>
