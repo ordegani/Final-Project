@@ -3,9 +3,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./backend/server.js",
   "scripts": {
-   "start": "node ./backend/index.js",
+   "start": "node ./backend/server.js",
    "client": "npm run start --prefix client",
  
     "node": "v14.15.3",
