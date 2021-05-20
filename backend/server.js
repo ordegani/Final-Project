@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require ('path');
 const cors = require('cors');
 const mongoose = require('mongoose');
 // mongoose.connect('mongodb://127.0.0.1:27017/wikiUser', {
@@ -6,6 +7,8 @@ const mongoose = require('mongoose');
 //     useCreateIndex: true
 // })
 require('dotenv').config();
+
+
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -30,7 +33,11 @@ const usersRouter = require('./routes/users');
 app.use('/exercise', exercisesRouter);
 app.use('/users', usersRouter);
 
-
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+} else {
+  app.use(express.static(path.join(__dirname, "../client/public")));
+}
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
