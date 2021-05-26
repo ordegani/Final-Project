@@ -19,6 +19,10 @@ color:rgb(187, 185, 185);
  }    
 .nav-link{
   color: white;
+
+  }
+  .nav-link:focus{ 
+    color:white ; 
 }
  .nav-link:hover{
   background-color: white;
