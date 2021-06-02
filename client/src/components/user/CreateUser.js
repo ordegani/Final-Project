@@ -26,9 +26,9 @@ export default class CreateUser extends Component {
       username: this.state.username
     }
 
-    console.log(user);
+    console.log(user); F
 
-    axios.post('http://localhost:5000/users/', user)
+    axios.post('https://artnote.herokuapp.com/users/', user)
       .then(res => console.log(res.data));
 
     this.setState({

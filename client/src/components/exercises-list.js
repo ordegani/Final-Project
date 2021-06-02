@@ -25,7 +25,7 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/exercise/')
+    axios.get('https://artnote.herokuapp.com/exercise')
       .then(response => {
         this.setState({ exercises: response.data })
       })
@@ -36,7 +36,7 @@ export default class ExercisesList extends Component {
 
   deleteExercise(id) {
     console.log(id)
-    axios.delete(`http://localhost:5000/exercise/`+id)
+    axios.delete(`https://artnote.herokuapp.com/exercise`+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
