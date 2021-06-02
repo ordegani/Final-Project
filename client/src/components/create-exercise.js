@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "../components/form/maincontainer.css";
 import "./form/maincontainer.css"
 import { withRouter } from "react-router";
-
+import Form from "./form/Form";
 
 class CreateExercise extends Component {
 
@@ -20,9 +20,11 @@ class CreateExercise extends Component {
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
+
+
     this.state = {
       username: '',
-      description: this.props.save.title +', ' +this.props.save.artistName+', '+this.props.save.completitionYear,
+      description: this.props.save.title +', ' +this.props.save.artistName+', '+this.props.save.completitionYear ,
       descriptio: 
       // `: ` + localStorage.getItem(`user1`) + 
       "for more info: "+`https://www.wikiart.org/en/${this.props.save.title}/`,
@@ -33,7 +35,7 @@ class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://artnote.herokuapp.com/users/')
       .then(response => {
         console.log(this.props)
         if (response.data.length > 0) {
@@ -93,9 +95,8 @@ class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:5000/exercise/', exercise)
+    axios.post('https://artnote.herokuapp.com/exercise', exercise)
       .then(res => this.props.history.push('/'));
-
     // window.location = '/';
   }
 
@@ -131,9 +132,10 @@ class CreateExercise extends Component {
           <label>Title and Description: </label>
           <input  type="text"
               required
-              className="form-control"
-              value={this.state.description}
+              className="form-control" 
+              value={this.state.description} 
               onChange={this.onChangeDescription}
+        
               />
         </div>
 
