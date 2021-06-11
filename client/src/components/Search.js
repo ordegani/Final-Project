@@ -80,6 +80,7 @@ const addTofavourites = (saved) => {
   
     
     // localStorage.setItem(`${user}`, JSON.stringify(favourites))
+    window.location = '/';
 };
 
 
