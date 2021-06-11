@@ -70,6 +70,7 @@ const addTofavourites = (saved) => {
     console.log(favourites);
    setsave(saved);
    
+   window.location = '/';
     // localStorage.setItem(`user`, saved.title)
     // localStorage.setItem(`user1`, saved.image)
     // localStorage.setItem(`user2`, query)
@@ -80,7 +81,7 @@ const addTofavourites = (saved) => {
   
     
     // localStorage.setItem(`${user}`, JSON.stringify(favourites))
-    window.location = '/';
+    
 };
 
 
