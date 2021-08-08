@@ -18,8 +18,8 @@ app.use(express.json());
 console.log(process.env.ATLAS_URI);
 
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
+const uri = "mongodb+srv://or:or@cluster0.yhueg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true,  useUnifiedTopology: true  }
 );
 const connection = mongoose.connection;
 
