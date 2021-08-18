@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const exerciseSchema = new Schema({
   description: { type: String, required: true },
-  description2: { type: String, required: true },
+  descriptio: { type: String, required: true },
   duration: { type: Number, required: true },
   date: { type: Date, required: true },
 }, {
