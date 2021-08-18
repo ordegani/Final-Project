@@ -11,6 +11,7 @@ const Exercise = props => (
     <td>
        <a href="#" onClick={() => { props.deleteExercise(props.exercise._id) }}>delete</a>
     </td>
+    
   </tr>
 )
 
@@ -35,14 +36,14 @@ export default class ExercisesList extends Component {
 
   deleteExercise(id) {
     console.log(id)
-    axios.delete(`https://artnote.herokuapp.com/exercise`+id)
+    axios.delete(`https://artnote.herokuapp.com/exercise/`+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
       exercises: this.state.exercises.filter(el => el._id !== id)
     })
+  
   }
-
   exerciseList() {
     return this.state.exercises.map(currentexercise => {
       return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
