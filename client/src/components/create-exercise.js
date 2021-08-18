@@ -23,7 +23,7 @@ class CreateExercise extends Component {
     this.state = {
 
       description: this.props.save.title +', ' +this.props.save.artistName+', '+this.props.save.completitionYear ,
-      description2: 
+      descriptio: 
 
       "for more info: "+`https://www.wikiart.org/en/${this.props.save.title}/`,
       duration: 0,
@@ -41,7 +41,7 @@ class CreateExercise extends Component {
 
   onChangeDescription2(e) {
     this.setState({
-      description2: e.target.value
+      descriptio: e.target.value
     })
   }
 
@@ -62,7 +62,7 @@ class CreateExercise extends Component {
 
     const exercise = {
       description: this.state.description,
-      description2: this.state.description2,
+      descriptio: this.state.descriptio,
       duration: this.state.duration,
       date: this.state.date
     }
@@ -96,7 +96,7 @@ class CreateExercise extends Component {
           <input  type="text"
               required
               className="form-control"
-              value={this.props.save && this.state.description2}
+              value={this.props.save && this.state.descriptio}
               onChange={this.onChangeDescriptio}
               />
        
