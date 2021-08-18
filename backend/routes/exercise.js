@@ -13,11 +13,7 @@ router.route('/').post((req, res) => {
   const duration = Number(req.body.duration);
   const date = Date.parse(req.body.date);
   
-  router.route(`/id`).delete((req, res) => {
-    Exercise.findByIdAndDelete(req.params.id)
-      .then(() => res.json('Exercise deleted.'))
-      .catch(err => res.status(400).json('Error: ' + err));
-  });
+
 
   const newExercise = new Exercise({
     description,
@@ -30,5 +26,9 @@ router.route('/').post((req, res) => {
   .then(() => res.json('added!'))
   .catch(err => res.status(400).json('Error: ' + err));
 });
-
+router.route(`/:id`).delete((req, res) => {
+  Exercise.findByIdAndDelete(req.params.id)
+    .then(() => res.json('deleted'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 module.exports = router;
