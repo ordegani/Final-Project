@@ -13,7 +13,7 @@ class CreateExercise extends Component {
   constructor(props) {
     super(props);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.onChangeDescriptio = this.onChangeDescriptio.bind(this);
+    this.onChangeDescription2 = this.onChangeDescription2.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -23,7 +23,7 @@ class CreateExercise extends Component {
     this.state = {
 
       description: this.props.save.title +', ' +this.props.save.artistName+', '+this.props.save.completitionYear ,
-      descriptio: 
+      description2: 
 
       "for more info: "+`https://www.wikiart.org/en/${this.props.save.title}/`,
       duration: 0,
@@ -39,9 +39,9 @@ class CreateExercise extends Component {
     })
   }
 
-  onChangeDescriptio(e) {
+  onChangeDescription2(e) {
     this.setState({
-      descriptio: e.target.value
+      description2: e.target.value
     })
   }
 
@@ -62,7 +62,7 @@ class CreateExercise extends Component {
 
     const exercise = {
       description: this.state.description,
-      descriptio: this.state.descriptio,
+      description2: this.state.description2,
       duration: this.state.duration,
       date: this.state.date
     }
@@ -80,7 +80,7 @@ class CreateExercise extends Component {
             
       {this.props.save && <img className="image" src={this.props.save.image} alt="image"></img>}
       <form className="form" onSubmit={this.onSubmit}>
-
+   
         <div className="form-group"> 
           <label>Title and Description: </label>
           <input  type="text"
@@ -96,11 +96,20 @@ class CreateExercise extends Component {
           <input  type="text"
               required
               className="form-control"
-              value={this.props.save && this.state.descriptio}
+              value={this.props.save && this.state.description2}
               onChange={this.onChangeDescriptio}
               />
        
-
+{/* 
+        <div className="form-group"> 
+    <label>Duration (in minutes): </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.duration}
+              onChange={this.onChangeDuration}
+              />
+        </div>  */}
         <div className="form-group">
           <label>Date: </label>
           <div>
