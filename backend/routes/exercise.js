@@ -9,13 +9,13 @@ router.route('/').get((req, res) => {
 
 router.route('/').post((req, res) => {
   const description = req.body.description;
-  const description2 = req.body.description2;
+  const descriptio = req.body.descriptio;
   const duration = Number(req.body.duration);
   const date = Date.parse(req.body.date);
 
   const newExercise = new Exercise({
     description,
-    description2,
+    descriptio,
     duration,
     date,
   });
