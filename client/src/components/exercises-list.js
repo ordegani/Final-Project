@@ -5,7 +5,6 @@ import "../components/form/maincontainer.css";
 
 const Exercise = props => (
   <tr>
-    {/* <td>{props.exercise.username}</td> */}
     <td>{props.exercise.description}</td>
     <td>{props.exercise.descriptio}</td>
     <td>{props.exercise.date.substring(0,10)}</td>
@@ -57,11 +56,9 @@ export default class ExercisesList extends Component {
         <table className="table">
           <thead className="thead-light">
             <tr>
-              {/* <th>Username</th> */}
               <th>Title and Description</th>
               <th>Personal notes</th>
               <th>Date</th>
-              {/* <th>Actions</th> */}
             </tr>
           </thead>
           <tbody>
@@ -74,4 +71,3 @@ export default class ExercisesList extends Component {
 }
 
 
-// {window.localStorage.getItem('user3')}</tr> */}

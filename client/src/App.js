@@ -6,12 +6,9 @@ import Navbar from "./components/navBar/NavBar"
 import ExercisesList from "./components/exercises-list";
 import EditExercise from "./components/edit-exercise";
 import CreateExercise from "./components/create-exercise";
-import CreateUser from "./components/user/CreateUser";
 import Form from "./components/form/Form";
 import Search from "./components/Search"
 
-
-// import { route } from '../../backend/routes/users';
 
 
 function App() {
@@ -38,7 +35,6 @@ function App() {
       </Route>
       <Route path="/" exact component={ExercisesList} />
       {/* <Route path="/create" component={CreateExercise} /> */}
-      {/* <Route path="/user" component={CreateUser} /> */}
       </div>
     </Router>
   );

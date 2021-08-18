@@ -71,24 +71,12 @@ const addTofavourites = (saved) => {
    setsave(saved);
    
    window.location = '/';
-    // localStorage.setItem(`user`, saved.title)
-    // localStorage.setItem(`user1`, saved.image)
-    // localStorage.setItem(`user2`, query)
-    
- 
+
   
   //   window.localStorage.setItem(i, saved.title);
-  
-    
-    // localStorage.setItem(`${user}`, JSON.stringify(favourites))
+   
     
 };
-
-
-// window.localStorage.setItem('user3', ...favourites);
-// JSON.parse(window.localStorage.getItem('user3'));
-// window.localStorage.setItem('user1', favourites);
-
 
 
 

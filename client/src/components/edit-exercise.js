@@ -7,7 +7,6 @@ export default class EditExercise extends Component {
   constructor(props) {
     super(props);
 
-    // this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeDescriptio = this.onChangeDescriptio.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
@@ -15,12 +14,11 @@ export default class EditExercise extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      username: '',
       description: '',
       descriptio: '',
       duration: 0,
       date: new Date(),
-      users: []
+
     }
   }
 
@@ -28,7 +26,7 @@ export default class EditExercise extends Component {
     axios.get('https://artnote.herokuapp.com/exercise'+this.props.match.params.id)
       .then(response => {
         this.setState({
-          username: response.data.username,
+
           description: response.data.description,
           descriptio: response.data.descriptio,
           duration: response.data.duration,
@@ -39,25 +37,9 @@ export default class EditExercise extends Component {
         console.log(error);
       })
 
-    axios.get('https://artnote.herokuapp.com/users/')
-      .then(response => {
-        if (response.data.length > 0) {
-          this.setState({
-            users: response.data.map(user => user.username),
-          })
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      })
 
   }
 
-  onChangeUsername(e) {
-    this.setState({
-      username: e.target.value
-    })
-  }
 
   onChangeDescription(e) {
     this.setState({
@@ -87,7 +69,7 @@ export default class EditExercise extends Component {
     e.preventDefault();
 
     const exercise = {
-      username: this.state.username,
+
       description: this.state.description,
       descriptio: this.state.descriptio,
       duration: this.state.duration,
@@ -107,23 +89,7 @@ export default class EditExercise extends Component {
     <div>
       <h3>Edit Exercise Log</h3>
       <form onSubmit={this.onSubmit}>
-        {/* <div className="form-group"> 
-          <label>Username: </label>
-          <select ref="userInput"
-              required
-              className="form-control"
-              value={this.state.username}
-              onChange={this.onChangeUsername}>
-              {
-                this.state.users.map(function(user) {
-                  return <option 
-                    key={user}
-                    value={user}>{user}
-                    </option>;
-                })
-              }
-          </select>
-        </div> */}
+
         <div className="form-group"> 
           <label>Title and Description: </label>
           <input  type="text"
