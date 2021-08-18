@@ -2,10 +2,6 @@ const express = require('express');
 const path = require ('path');
 const cors = require('cors');
 const mongoose = require('mongoose');
-// mongoose.connect('mongodb://127.0.0.1:27017/wikiUser', {
-//     useNewUrlParser:true, 
-//     useCreateIndex: true
-// })
 require('dotenv').config();
 
 
@@ -28,10 +24,8 @@ connection.once('open', () => {
 })
 
 const exercisesRouter = require('./routes/exercise');
-const usersRouter = require('./routes/users');
 
 app.use('/exercise', exercisesRouter);
-app.use('/users', usersRouter);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
