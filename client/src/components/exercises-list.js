@@ -13,7 +13,7 @@ const Exercise = props => (
     </td>
   </tr>
 )
-//  TODO{/* <Link to={"/edit/"+props.exercise._id}>edit</Link> | */}
+
 export default class ExercisesList extends Component {
   constructor(props) {
     super(props);

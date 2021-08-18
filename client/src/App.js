@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import About from "./components/about"
 import Navbar from "./components/navBar/NavBar"
 import ExercisesList from "./components/exercises-list";
-import EditExercise from "./components/edit-exercise";
 import CreateExercise from "./components/create-exercise";
 import Form from "./components/form/Form";
 import Search from "./components/Search"
@@ -27,9 +26,7 @@ function App() {
       <Form setsave={setsave}/>
       </Route>
 
-      {/* <Route path="/gallery" exact component={Form} /> */}
 
-      <Route path="/edit/:id" component={EditExercise} />
       <Route path="/create" exact> 
       <CreateExercise save={save}/>
       </Route>
