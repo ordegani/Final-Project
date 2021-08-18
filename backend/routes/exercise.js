@@ -12,6 +12,7 @@ router.route('/').post((req, res) => {
   const descriptio = req.body.descriptio;
   const duration = Number(req.body.duration);
   const date = Date.parse(req.body.date);
+  
 
   const newExercise = new Exercise({
     description,
