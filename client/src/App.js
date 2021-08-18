@@ -18,19 +18,19 @@ function App() {
       <Navbar />
       <br/>
       <Route path="/about" component={About} />
-      <Route path="/Search" exact> 
-      <Search setsave={setsave}/>
+      <Route path="/search" exact> 
+      <Search setsave={setsave} save={save}/>
       </Route>
       {/* <Route path="/discover" component={Discover} /> */}
-      <Route path="/gallery" exact> 
-      <Form setsave={setsave}/>
+      <Route path="/" exact> 
+      <Form setsave={setsave} save={save}/>
       </Route>
 
 
       <Route path="/create" exact> 
       <CreateExercise save={save}/>
       </Route>
-      <Route path="/" exact component={ExercisesList} />
+      <Route path="/list" exact component={ExercisesList} />
       {/* <Route path="/create" component={CreateExercise} /> */}
       </div>
     </Router>
