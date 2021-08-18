@@ -4,7 +4,7 @@ import "./maincontainer.css";
 
 
 
-const Form = ({setsave}) => {
+const Form = ({setsave, save}) => {
   const [paintings, setPaintings] = useState([]);
   const [search, setSearch] = useState("");
  
@@ -68,11 +68,10 @@ const addTofavourites = (saved) => {
 
 
     setFavourites([...favourites, saved]);
-    
-    // alert(`Good Choice!`);
    setsave(saved);
    console.log(favourites);
-
+   setsave(saved);
+  alert("SAVED!")
 
 };
 
@@ -131,7 +130,7 @@ function refreshPage(){
             buttonText="Save"
             // onClick={AddTofavourites}
             // buttonText="Save"
-            
+           
             
           />
           

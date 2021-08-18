@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import "./form/maincontainer.css";
 import { withRouter } from "react-router";
 
-const Search = ({setsave}) => {
+const Search = ({setsave, save}) => {
   const [paintings, setPaintings] = useState([]);
   const [search, setSearch] = useState("");
  
@@ -62,23 +62,15 @@ const Search = ({setsave}) => {
 ///////////
 const [favourites, setFavourites] = useState([]);
 
-const addTofavourites = (saved) => {
-
+const AddTofavourites = (saved) => {
 
     setFavourites([...favourites, saved]);
-    // alert(`Good Choice!`);
+
     console.log(favourites);
    setsave(saved);
-   
-   window.location = '/';
+  alert("SAVED!")
 
-  
-  //   window.localStorage.setItem(i, saved.title);
-   
-    
 };
-
-
 
 ///////////
   return (
@@ -123,7 +115,7 @@ const addTofavourites = (saved) => {
             artistName={painting.artistName}
             title={painting.title}
             completitionYear={painting.completitionYear}
-            onClick={addTofavourites}
+            onClick={AddTofavourites}
             buttonText="Save"
             
             // onClick={AddTofavourites}

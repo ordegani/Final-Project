@@ -11,7 +11,9 @@ const Painting = ({
   title,
   completitionYear,
   buttonText,
-  onClick
+  onClick,
+
+
 }) => {
   return (
     <div className="paintingsContainer">
@@ -26,7 +28,6 @@ const Painting = ({
       >
         {buttonText}
       </button>
-      
     </div>
     
   );

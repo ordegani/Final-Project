@@ -13,7 +13,7 @@ class CreateExercise extends Component {
   constructor(props) {
     super(props);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.onChangeDescription2 = this.onChangeDescription2.bind(this);
+    this.onChangeDescriptio = this.onChangeDescriptio.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -39,7 +39,7 @@ class CreateExercise extends Component {
     })
   }
 
-  onChangeDescription2(e) {
+  onChangeDescriptio(e) {
     this.setState({
       descriptio: e.target.value
     })
@@ -70,7 +70,7 @@ class CreateExercise extends Component {
     console.log(exercise);
 
     axios.post('https://artnote.herokuapp.com/exercise', exercise)
-      .then(res => this.props.history.push('/'));
+      .then(res => this.props.history.push('/list'));
     // window.location = '/';
   }
 

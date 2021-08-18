@@ -171,7 +171,12 @@
  .list{
   font-family: 'Playfair Display', serif;
 }
-
+.link{
+  color: #48E5DA;
+}
+.hidden{
+  color: transparent;
+}
  #confirm button {
     background-color: #48E5DA;
     display: inline-block;
