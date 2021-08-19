@@ -3,16 +3,12 @@ import React, { useEffect, useState } from "react";
 import "./maincontainer.css";
 import { Link } from "react-router-dom";
 
-
-
-const Form = ({setsave, save}) => {
+const Form = ({ setsave, save }) => {
   const [paintings, setPaintings] = useState([]);
   const [search, setSearch] = useState("");
- 
+
   const [SessionKey, setSessionKey] = useState("");
 
-
-  
   const getSessionKey = async () => {
     const response = await fetch(
       `https://api.codetabs.com/v1/proxy?quest=https://www.wikiart.org/en/Api/2/login?accessCode=8152dc79d3a84b65&secretCode=8e713d5e00346e24`
@@ -35,20 +31,26 @@ const Form = ({setsave, save}) => {
     // const data = JSON.stringify(Rawdata).toLowerCase().replace(/ /g,"-");
     setPaintings(Rawdata);
     console.log(Rawdata);
-    //  console.log(data[100].image); 
-    //  console.log(data[1].image); 
-    //  console.log(data[2].image); 
-    //  console.log(data[3].image); 
-    //  console.log(data[4].image); 
-    //  console.log(data[5].image); 
+    //  console.log(data[100].image);
+    //  console.log(data[1].image);
+    //  console.log(data[2].image);
+    //  console.log(data[3].image);
+    //  console.log(data[4].image);
+    //  console.log(data[5].image);
     // setPaintings(data.hits);
     // console.log(data.hits);
   };
 
-  const flavourArray = ["john-everett-millais", "edward-hopper", "michelangelo-merisi-da-caravaggio", "gustav-klimt", "claude-monet"];
+  const flavourArray = [
+    "john-everett-millais",
+    "edward-hopper",
+    "michelangelo-merisi-da-caravaggio",
+    "gustav-klimt",
+    "claude-monet",
+  ];
   const ran = Math.floor(Math.random() * flavourArray.length);
   const searcher = flavourArray[ran];
-  const [query, setQuery] = useState (searcher);
+  const [query, setQuery] = useState(searcher);
 
   useEffect(() => {
     getPaintings();
@@ -59,46 +61,46 @@ const Form = ({setsave, save}) => {
   // };
   const getSearch = (e) => {
     e.preventDefault();
-    setQuery(search.toLowerCase().replace(/ /g,"-"));
+    setQuery(search.toLowerCase().replace(/ /g, "-"));
     setSearch("");
   };
-///////////
-const [favourites, setFavourites] = useState([]);
+  ///////////
+  const [favourites, setFavourites] = useState([]);
 
-const addTofavourites = (saved) => {
+  const addTofavourites = (saved) => {
 
 
-    setFavourites([...favourites, saved]);
+  setFavourites([...favourites, saved]);
    setsave(saved);
    console.log(favourites);
    setsave(saved);
- 
-  if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
-  {
-  window.location.href='/create';
-  };
+//  const confirmation=()=>{
+//   if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
+//   {
+//   window.location.href='/create';
+//   };
+// }
+// confirmation();
 };
 
-
-function refreshPage(){
-  window.location.reload();
-} 
-
+  function refreshPage() {
+    window.location.reload();
+  }
 
 
-///////////
+  ///////////
   return (
-   
-
-  
     <div className="maincontainer">
+      <div className="paintings">
+        <div className="explore">
+          Explore our suggestion: <br />
+          {query}'s work
+          <button className="refresh" type="submit" onClick={refreshPage}>
+            Give me a new suggestion
+          </button>
+        </div>
+        {/* <form onSubmit={getSearch} className="search-form"> */}
 
-    <div className="paintings">
-        <div className="explore">Explore our suggestion: <br/>{query}'s work
-        
-        <button className="refresh" type="submit" onClick={refreshPage}>Give me a new suggestion</button></div>
-      {/* <form onSubmit={getSearch} className="search-form"> */}
-      
         {/* <input
           className="search-bar"
           placeholder="Or type here your search"
@@ -106,25 +108,23 @@ function refreshPage(){
           value={search}
           onChange={updateSearch}
         /> */}
-      
+
         {/* <button
           className="search-button"
           type="Submit"
         >
           Search
         </button> */}
-      
-      {/* </form> */}
-      
 
-        
-      {/* <div>{painting.artistname}</div> */}
-        {paintings.slice(paintings.length-10).map((painting, index) => (
-          
+        {/* </form> */}
+
+        {/* <div>{painting.artistname}</div> */}
+        {paintings.slice(paintings.length - 10).map((painting, index) => (
           <Painting
             key={painting.index}
             id={painting.index}
-            image={painting.image.replace('!Large.jpg','')
+            image={
+              painting.image.replace("!Large.jpg", "")
               //TODO add css to control size
               // !Large.jpg + copy api
             }
@@ -135,17 +135,12 @@ function refreshPage(){
             buttonText="Save"
             // onClick={AddTofavourites}
             // buttonText="Save"
-
-            
           />
-          
         ))}
-        
       </div>
-      
+
     </div>
   );
 };
 
 export default Form;
-
