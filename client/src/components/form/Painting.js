@@ -2,8 +2,6 @@ import React from "react";
 import "./maincontainer.css";
 // import Form from "./Form";
 
-
-
 const Painting = ({
 
   image,
@@ -28,6 +26,7 @@ const Painting = ({
       >
         {buttonText}
       </button>
+     
     </div>
     
   );

@@ -68,7 +68,10 @@ const AddTofavourites = (saved) => {
 
     console.log(favourites);
    setsave(saved);
-  alert("SAVED!")
+   if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
+   {
+   window.location.href='/create';
+   };
 
 };
 

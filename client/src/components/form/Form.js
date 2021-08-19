@@ -1,6 +1,7 @@
 import Painting from "./Painting";
 import React, { useEffect, useState } from "react";
 import "./maincontainer.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -44,7 +45,7 @@ const Form = ({setsave, save}) => {
     // console.log(data.hits);
   };
 
-  const flavourArray = ["john-everett-millais", "edward-hopper", "michelangelo-merisi-da-caravaggio", "gustav-klimt", "leon-spilliaert"];
+  const flavourArray = ["john-everett-millais", "edward-hopper", "michelangelo-merisi-da-caravaggio", "gustav-klimt", "claude-monet"];
   const ran = Math.floor(Math.random() * flavourArray.length);
   const searcher = flavourArray[ran];
   const [query, setQuery] = useState (searcher);
@@ -71,8 +72,11 @@ const addTofavourites = (saved) => {
    setsave(saved);
    console.log(favourites);
    setsave(saved);
-  alert("SAVED!")
-
+ 
+  if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
+  {
+  window.location.href='/create';
+  };
 };
 
 
@@ -116,6 +120,7 @@ function refreshPage(){
         
       {/* <div>{painting.artistname}</div> */}
         {paintings.slice(paintings.length-10).map((painting, index) => (
+          
           <Painting
             key={painting.index}
             id={painting.index}
@@ -130,7 +135,7 @@ function refreshPage(){
             buttonText="Save"
             // onClick={AddTofavourites}
             // buttonText="Save"
-           
+
             
           />
           
