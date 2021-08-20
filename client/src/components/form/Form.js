@@ -1,8 +1,7 @@
 import Painting from "./Painting";
-import React, { useEffect, useState,browserHistory } from "react";
+import React, { useEffect, useState, browserHistory } from "react";
 import "./maincontainer.css";
 import Btn from "../btn";
-
 
 const Form = ({ setsave, save }) => {
   const [paintings, setPaintings] = useState([]);
@@ -68,16 +67,14 @@ const Form = ({ setsave, save }) => {
   const [favourites, setFavourites] = useState([]);
 
   const addTofavourites = (saved) => {
-
-  setFavourites([...favourites, saved]);
-   setsave(saved);
-   console.log(favourites);
-   setsave(saved);
-};
+    setFavourites([...favourites, saved]);
+    setsave(saved);
+    console.log(favourites);
+    setsave(saved);
+  };
 
   function refreshPage() {
     window.location.reload();
-    
   }
 
   // return (
@@ -86,7 +83,6 @@ const Form = ({ setsave, save }) => {
   //   </div>
   // )
 
-
   ///////////
   return (
     <div className="maincontainer">
@@ -94,7 +90,7 @@ const Form = ({ setsave, save }) => {
         <div className="explore">
           Explore our suggestion: <br />
           {query}'s work
-          <button className="refresh" type="submit" onClick={(refreshPage)}>
+          <button className="refresh" type="submit" onClick={refreshPage}>
             Give me a new suggestion
           </button>
         </div>
@@ -134,7 +130,7 @@ const Form = ({ setsave, save }) => {
             buttonText="Save"
             // onClick={AddTofavourites}
             // buttonText="Save"
-            onClick2={()=>setsave(false)}
+            onClick2={() => setsave(false)}
           />
         ))}
       </div>
