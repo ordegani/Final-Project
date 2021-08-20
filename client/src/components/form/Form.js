@@ -1,8 +1,6 @@
 import Painting from "./Painting";
 import React, { useEffect, useState,browserHistory } from "react";
 import "./maincontainer.css";
-import { useHistory } from "react-router-dom";
-
 
 
 const Form = ({ setsave, save }) => {
@@ -79,11 +77,9 @@ const Form = ({ setsave, save }) => {
 
   function refreshPage() {
     window.location.reload();
+    
   }
 
-
-  let history = useHistory();
-  history.push('/create');
   // return (
   //   <div>
   //     <button className="link" onClick={NewBtn}/>

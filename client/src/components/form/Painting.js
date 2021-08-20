@@ -11,6 +11,7 @@ const Painting = ({
   onClick,
 
 }) => {
+  
   return (
     <div className="paintingsContainer">
       
