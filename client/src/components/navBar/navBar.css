@@ -27,4 +27,19 @@ color:rgb(187, 185, 185);
  .nav-link:hover{
   background-color: white;
   color: black;
- }     
+ }  
+ /* mobile    */
+ @media (max-width: 414px) {
+  .navbar-items{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    list-style: none;
+    font-size: medium;
+    background-color: red;
+  }
+  .navbar-items{
+    color: black;
+  }
+ }

@@ -23,7 +23,7 @@ export default class Navbar extends Component {
           <Link to="/create" className="nav-link">Create Note</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/list" className="nav-link">View Notes List</Link>
+          <Link to="/list" className="nav-link">Notes List</Link>
           </li>
 
         </ul>

@@ -199,3 +199,10 @@
 .form{
   font-family: 'Playfair Display', serif;
 }
+/* mobile */
+@media (max-width: 414px) {
+  .image{
+    max-width: 70vh;
+    max-height: 100vh; 
+  }
+}
