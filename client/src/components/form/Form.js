@@ -74,14 +74,22 @@ const Form = ({ setsave, save }) => {
    setsave(saved);
    console.log(favourites);
    setsave(saved);
-   let history = useHistory();
-   history.push('/create');
 
 };
 
   function refreshPage() {
     window.location.reload();
   }
+
+
+  let history = useHistory();
+  history.push('/create');
+  // return (
+  //   <div>
+  //     <button className="link" onClick={NewBtn}/>
+  //   </div>
+  // )
+
 
   ///////////
   return (
@@ -133,6 +141,7 @@ const Form = ({ setsave, save }) => {
           />
         ))}
       </div>
+
     </div>
   );
 };
