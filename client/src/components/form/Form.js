@@ -94,7 +94,7 @@ const Form = ({ setsave, save }) => {
         <div className="explore">
           Explore our suggestion: <br />
           {query}'s work
-          <button className="refresh" type="submit" onClick={refreshPage}>
+          <button className="refresh" type="submit" onClick={(refreshPage)}>
             Give me a new suggestion
           </button>
         </div>
@@ -134,7 +134,7 @@ const Form = ({ setsave, save }) => {
             buttonText="Save"
             // onClick={AddTofavourites}
             // buttonText="Save"
-            onClick2={refreshPage}
+            onClick2={()=>setsave(false)}
           />
         ))}
       </div>

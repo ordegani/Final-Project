@@ -88,7 +88,7 @@ class CreateExercise extends Component {
           <input  type="text"
               required
               className="form-control" 
-              value={(this.props.save)? this.state.description: "Oops, choose an artwork"} 
+              value={(this.props.save)? this.state.description: "Oops, you didn't choose an artwork"} 
               onChange={this.onChangeDescription}
         
               />
@@ -98,7 +98,7 @@ class CreateExercise extends Component {
           <input  type="text"
               required
               className="form-control"
-              value={(this.props.save)? (this.props.save && this.state.descriptio):"Oops, choose an artwork and fill me up"}
+              value={(this.props.save)? (this.props.save && this.state.descriptio):"Choose an artwork and fill me up"}
               onChange={this.onChangeDescriptio}
               />
        
