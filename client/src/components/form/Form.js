@@ -72,13 +72,13 @@ const Form = ({ setsave, save }) => {
    console.log(favourites);
    setsave(saved);
    console.log(saved);
- const confirmation=()=>{
-  if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
-  {
-  window.location.href='/create';
-  };
-}
-confirmation();
+//  const confirmation=()=>{
+//   if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
+//   {
+//   window.location.href='/create';
+//   };
+// }
+// confirmation();
 };
 
   function refreshPage() {
