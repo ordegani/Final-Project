@@ -1,6 +1,9 @@
 import Painting from "./Painting";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,browserHistory } from "react";
 import "./maincontainer.css";
+import { useHistory } from "react-router-dom";
+
+
 
 const Form = ({ setsave, save }) => {
   const [paintings, setPaintings] = useState([]);
@@ -71,6 +74,8 @@ const Form = ({ setsave, save }) => {
    setsave(saved);
    console.log(favourites);
    setsave(saved);
+   let history = useHistory();
+   history.push('/create');
 
 };
 

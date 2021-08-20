@@ -1,6 +1,5 @@
 import React from "react";
 import "./maincontainer.css";
-import { Link } from "react-router-dom";
 
 const Painting = ({
 
@@ -10,7 +9,6 @@ const Painting = ({
   completitionYear,
   buttonText,
   onClick,
-  refreshPage,
 
 }) => {
   return (
@@ -26,8 +24,7 @@ const Painting = ({
       >
         {buttonText}
       </button>
-      {document.getElementsByClassName("savedList")
-   .addEventListener('click', refreshPage())}
+
     </div>
     
   );
