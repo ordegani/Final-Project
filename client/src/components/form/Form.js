@@ -6,8 +6,6 @@ const Form = ({ setsave, save }) => {
   const [paintings, setPaintings] = useState([]);
   const [search, setSearch] = useState("");
   const [SessionKey, setSessionKey] = useState("");
-  const [i, setI] = useState("no");
-  console.log(i);
 
   const getSessionKey = async () => {
     const response = await fetch(
@@ -73,14 +71,14 @@ const Form = ({ setsave, save }) => {
    setsave(saved);
    console.log(favourites);
    setsave(saved);
-   
-//  const confirmation=()=>{
-//   if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
-//   {
-//   window.location.href='/create';
-//   };
-// }
-// confirmation();
+   console.log(saved);
+ const confirmation=()=>{
+  if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
+  {
+  window.location.href='/create';
+  };
+}
+confirmation();
 };
 
   function refreshPage() {
