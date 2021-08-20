@@ -1,6 +1,7 @@
 import React from "react";
 import "./maincontainer.css";
 // import Form from "./Form";
+import { Link } from "react-router-dom";
 
 const Painting = ({
 
@@ -10,7 +11,6 @@ const Painting = ({
   completitionYear,
   buttonText,
   onClick,
-
 
 }) => {
   return (
@@ -26,7 +26,7 @@ const Painting = ({
       >
         {buttonText}
       </button>
-     
+
     </div>
     
   );

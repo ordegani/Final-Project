@@ -1,13 +1,13 @@
 import Painting from "./Painting";
 import React, { useEffect, useState } from "react";
 import "./maincontainer.css";
-import { Link } from "react-router-dom";
 
 const Form = ({ setsave, save }) => {
   const [paintings, setPaintings] = useState([]);
   const [search, setSearch] = useState("");
-
   const [SessionKey, setSessionKey] = useState("");
+  const [i, setI] = useState("no");
+  console.log(i);
 
   const getSessionKey = async () => {
     const response = await fetch(
@@ -69,11 +69,11 @@ const Form = ({ setsave, save }) => {
 
   const addTofavourites = (saved) => {
 
-
   setFavourites([...favourites, saved]);
    setsave(saved);
    console.log(favourites);
    setsave(saved);
+   
 //  const confirmation=()=>{
 //   if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
 //   {
@@ -138,7 +138,6 @@ const Form = ({ setsave, save }) => {
           />
         ))}
       </div>
-
     </div>
   );
 };

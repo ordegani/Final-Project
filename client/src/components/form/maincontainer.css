@@ -94,7 +94,12 @@
     margin-top: 2vh;
     border-radius: 60px 60px 60px 60px;
   }
-
+.hiddenBtn{
+  color: red;
+}
+.visibleBtn{
+  color: #48E5DA;
+}
   .h4{
     border:2px solid black;
   }
