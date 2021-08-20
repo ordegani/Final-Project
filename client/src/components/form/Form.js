@@ -1,6 +1,7 @@
 import Painting from "./Painting";
 import React, { useEffect, useState,browserHistory } from "react";
 import "./maincontainer.css";
+import Btn from "../btn";
 
 
 const Form = ({ setsave, save }) => {
@@ -72,7 +73,6 @@ const Form = ({ setsave, save }) => {
    setsave(saved);
    console.log(favourites);
    setsave(saved);
-
 };
 
   function refreshPage() {
@@ -134,10 +134,10 @@ const Form = ({ setsave, save }) => {
             buttonText="Save"
             // onClick={AddTofavourites}
             // buttonText="Save"
+            onClick2={refreshPage}
           />
         ))}
       </div>
-
     </div>
   );
 };
