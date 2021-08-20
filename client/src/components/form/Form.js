@@ -71,14 +71,12 @@ const Form = ({ setsave, save }) => {
    setsave(saved);
    console.log(favourites);
    setsave(saved);
-   console.log(saved);
 
 };
 
   function refreshPage() {
     window.location.reload();
   }
-
 
   ///////////
   return (
