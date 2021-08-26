@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import About from "./components/about"
 import Navbar from "./components/navBar/NavBar"
 import ExercisesList from "./components/exercises-list";
@@ -13,10 +13,11 @@ import Search from "./components/Search"
 function App() {
   const [save, setsave] = useState(false);
  return (
-    <Router>
+  <BrowserRouter>
       <div className="container">
       <Navbar />
-      <br/>
+      <Switch>
+
       <Route path="/about" component={About} />
       <Route path="/search" exact> 
       <Search setsave={setsave} save={save}/>
@@ -32,8 +33,9 @@ function App() {
       </Route>
       <Route path="/list" exact component={ExercisesList} />
       {/* <Route path="/create" component={CreateExercise} /> */}
+      </Switch>
       </div>
-    </Router>
+      </BrowserRouter>
   );
 }
 

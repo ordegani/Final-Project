@@ -68,14 +68,16 @@ const AddTofavourites = (saved) => {
 
     console.log(favourites);
    setsave(saved);
-   if (window.confirm('Saved! If you click "ok" you would be redirected to creating a note. Cancel will load this website ')) 
+   if (!window.confirm('Saved! Click "ok" or "cancel" to unsave')) 
    {
-   window.location.href='/create';
+    if (window.confirm('Want to re-search?')) {
+      window.location.reload();
+    }
+
    };
 
 };
 
-///////////
   return (
   
     <div className="maincontainer">
@@ -123,7 +125,7 @@ const AddTofavourites = (saved) => {
             
             // onClick={AddTofavourites}
             // buttonText="Save"
-            
+            onClick2={() => setsave(false)}
             
           />
           
