@@ -16,7 +16,7 @@ function App() {
   <BrowserRouter>
       <div className="container">
       <Navbar />
-      <Switch>
+
 
       <Route path="/about" component={About} />
       <Route path="/search" exact> 
@@ -33,7 +33,7 @@ function App() {
       </Route>
       <Route path="/list" exact component={ExercisesList} />
       {/* <Route path="/create" component={CreateExercise} /> */}
-      </Switch>
+
       </div>
       </BrowserRouter>
   );
