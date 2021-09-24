@@ -59,6 +59,11 @@ const Form = ({ setsave, save }) => {
   const addTofavourites = (saved) => {
     setFavourites([...favourites, saved]);
     setsave(saved);
+    if (!window.confirm('Saved! Click "ok" or "cancel" to unsave')) {
+      if (window.confirm("Want to re-search?")) {
+        window.location.reload();
+      }
+    }
     console.log(favourites);
     setsave(saved);
   };
