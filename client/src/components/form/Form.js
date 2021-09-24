@@ -46,6 +46,7 @@ const Form = ({ setsave, save }) => {
     "michelangelo-merisi-da-caravaggio",
     "gustav-klimt",
     "claude-monet",
+    "lucian-freud"
   ];
   const ran = Math.floor(Math.random() * flavourArray.length);
   const searcher = flavourArray[ran];
