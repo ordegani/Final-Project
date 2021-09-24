@@ -83,4 +83,3 @@ export default class NotesList extends Component {
     );
   }
 }
-
