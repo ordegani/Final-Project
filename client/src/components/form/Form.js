@@ -30,14 +30,6 @@ const Form = ({ setsave, save }) => {
     // const data = JSON.stringify(Rawdata).toLowerCase().replace(/ /g,"-");
     setPaintings(Rawdata);
     console.log(Rawdata);
-    //  console.log(data[100].image);
-    //  console.log(data[1].image);
-    //  console.log(data[2].image);
-    //  console.log(data[3].image);
-    //  console.log(data[4].image);
-    //  console.log(data[5].image);
-    // setPaintings(data.hits);
-    // console.log(data.hits);
   };
 
   const flavourArray = [
