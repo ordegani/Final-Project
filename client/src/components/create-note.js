@@ -107,17 +107,6 @@ class CreateExercise extends Component {
             }
             onChange={this.onChangeDescriptio}
           />
-
-          {/* 
-        <div className="form-group"> 
-    <label>Duration (in minutes): </label>
-          <input 
-              type="text" 
-              className="form-control"
-              value={this.state.duration}
-              onChange={this.onChangeDuration}
-              />
-        </div>  */}
           <div className="form-group">
             <label>Date: </label>
             <div>
