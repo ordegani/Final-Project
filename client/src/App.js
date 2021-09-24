@@ -12,7 +12,7 @@ function App() {
   const [save, setsave] = useState(false);
   return (
     <div className="container">
-    <BrowserRouter>
+      <BrowserRouter>
         <Navbar />
         <Switch>
           <Route path="/about" component={About} />
@@ -22,14 +22,12 @@ function App() {
           <Route path="/" exact>
             <Form setsave={setsave} save={save} />
           </Route>
-
           <Route path="/create" exact>
             <CreateExercise save={save} />
           </Route>
           <Route path="/list" exact component={ExercisesList} />
-    
         </Switch>
-    </BrowserRouter>
+      </BrowserRouter>
     </div>
   );
 }
