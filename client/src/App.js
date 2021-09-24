@@ -28,7 +28,7 @@ function App() {
             <CreateExercise save={save} />
           </Route>
           <Route path="/list" exact component={ExercisesList} />
-          {/* <Route path="/create" component={CreateExercise} /> */}
+    
         </Switch>
     </BrowserRouter>
     </div>
