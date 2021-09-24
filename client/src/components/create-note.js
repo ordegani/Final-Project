@@ -70,7 +70,7 @@ class CreateExercise extends Component {
     axios
       .post("https://artnote.herokuapp.com/exercise", exercise)
       .then((res) => this.props.history.push("/list"));
-    // window.location = '/';
+    // window.location = '/list';
   }
 
   render() {
