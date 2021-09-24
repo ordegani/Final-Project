@@ -48,9 +48,6 @@ const Form = ({ setsave, save }) => {
     getPaintings();
   }, [query]);
 
-  // const updateSearch = (e) => {
-  //   setSearch(e.target.value);
-  // };
   const getSearch = (e) => {
     e.preventDefault();
     setQuery(search.toLowerCase().replace(/ /g, "-"));
