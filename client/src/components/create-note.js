@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import Form from "./form/Form"
 import "../components/form/maincontainer.css";
 import "./form/maincontainer.css";
 import { withRouter } from "react-router";
-import Form from "./form/Form";
 
 class CreateExercise extends Component {
   constructor(props) {
