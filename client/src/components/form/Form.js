@@ -67,13 +67,6 @@ const Form = ({ setsave, save }) => {
     window.location.reload();
   }
 
-  // return (
-  //   <div>
-  //     <button className="link" onClick={NewBtn}/>
-  //   </div>
-  // )
-
-  ///////////
   return (
     <div className="maincontainer">
       <div className="paintings">
