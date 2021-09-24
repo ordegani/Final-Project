@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import About from "./components/about";
 import Navbar from "./components/navBar/NavBar";
-import NotesList from "./components/notes-list"
+import NotesList from "./components/notes-list";
 import CreateExercise from "./components/create-note";
 import Form from "./components/form/Form";
 import Search from "./components/Search";
