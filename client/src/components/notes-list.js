@@ -21,7 +21,7 @@ const Exercise = (props) => (
   </tr>
 );
 
-export default class ExercisesList extends Component {
+export default class NotesList extends Component {
   constructor(props) {
     super(props);
 
@@ -83,3 +83,4 @@ export default class ExercisesList extends Component {
     );
   }
 }
+
