@@ -11,8 +11,8 @@ import Search from "./components/Search";
 function App() {
   const [save, setsave] = useState(false);
   return (
+    <div className="container">
     <BrowserRouter>
-      <div className="container">
         <Navbar />
         <Switch>
           <Route path="/about" component={About} />
@@ -30,8 +30,8 @@ function App() {
           <Route path="/list" exact component={ExercisesList} />
           {/* <Route path="/create" component={CreateExercise} /> */}
         </Switch>
-      </div>
     </BrowserRouter>
+    </div>
   );
 }
 
