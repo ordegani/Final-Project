@@ -63,6 +63,9 @@
   padding: 10px;
   padding: 10px 20px;
 }
+.search-form > input {
+font-size: smaller;
+}
 .search-bar {
   width: 30%;
   padding: 10px;
