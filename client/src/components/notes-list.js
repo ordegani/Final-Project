@@ -9,14 +9,14 @@ const Exercise = (props) => (
     <td>{props.exercise.descriptio}</td>
     <td>{props.exercise.date.substring(0, 10)}</td>
     <td>
-      <a
-        href="#"
+      <button
+
         onClick={() => {
           props.deleteExercise(props.exercise._id);
         }}
       >
         delete
-      </a>
+      </button>
     </td>
   </tr>
 );
