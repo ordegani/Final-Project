@@ -25,7 +25,7 @@ router.route("/").post((req, res) => {
     .then(() => res.json("added!"))
     .catch((err) => res.status(400).json("Error: " + err));
 });
-router.route(`/:id`).delete((req, res) => {
+router.route("/:id").delete((req, res) => {
   Exercise.findByIdAndDelete(req.params.id)
     .then(() => res.json("deleted"))
     .catch((err) => res.status(400).json("Error: " + err));
