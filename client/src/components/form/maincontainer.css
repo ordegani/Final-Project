@@ -94,7 +94,6 @@ h3 {
   margin-top: 10vh;
 }
 
-
 .refresh {
   margin: 5vh;
   border-radius: 60px 60px;
@@ -105,7 +104,6 @@ h3 {
   align-items: center;
   text-align: center;
   font-size: 50%;
-  /* transform: rotate(50deg 50deg); */
 }
 .refresh:hover {
   background-color: white;
