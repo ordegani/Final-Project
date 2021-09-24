@@ -103,8 +103,7 @@ const Form = ({ setsave, save }) => {
             id={painting.index}
             image={
               painting.image.replace("!Large.jpg", "")
-              //TODO add css to control size
-              // !Large.jpg + copy api
+              
             }
             artistName={painting.artistName}
             title={painting.title}
