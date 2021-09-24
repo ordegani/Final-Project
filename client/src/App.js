@@ -19,7 +19,6 @@ function App() {
           <Route path="/search" exact>
             <Search setsave={setsave} save={save} />
           </Route>
-          {/* <Route path="/discover" component={Discover} /> */}
           <Route path="/" exact>
             <Form setsave={setsave} save={save} />
           </Route>
