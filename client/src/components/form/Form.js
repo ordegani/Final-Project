@@ -106,10 +106,7 @@ const Form = ({ setsave, save }) => {
           <Painting
             key={painting.index}
             id={painting.index}
-            image={
-              painting.image.replace("!Large.jpg", "")
-              
-            }
+            image={painting.image.replace("!Large.jpg", "")}
             artistName={painting.artistName}
             title={painting.title}
             completitionYear={painting.completitionYear}
